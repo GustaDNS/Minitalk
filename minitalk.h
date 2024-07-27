@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 10:24:50 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/07/27 17:37:52 by marvin           ###   ########.fr       */
+/*   Updated: 2024/07/27 22:57:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <sys/types.h>
 
-void	ft_btoa(int sig);
+void	bit_ascii(int sig);
 char	*ft_strcjoin(char const *s1, char c);
 void    send_string(int pid, char str);
 

@@ -31,6 +31,7 @@ void	bit_ascii(int sig)
 	static char	*str;
 	char		*temp;
 
+	
 	if (!str)
 		str = ft_calloc(1, 1);
 	if (sig == SIGUSR1)
@@ -59,11 +60,11 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		ft_printf("%s", "Erro\n");
+		ft_printf("%s", "Error\n");
 		return (1);
 	}
 	pid = getpid();
-	ft_printf("$ %s\n", "Gudaniel Server is open");
+	ft_printf("$ %s\n", "Gudaniel Server is open and running");
 	ft_printf("$ [PID]: %d \n", pid);
 	ft_printf("$ %s \n", "Client input:");
 	while (argc == 1)
