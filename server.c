@@ -1,5 +1,14 @@
 #include "minitalk.h"
 
+/**
+ * @brief Join a string with a character
+ * @param s1 The string to join
+ * @param c The character to join
+ * @param string The new string
+ * @param size The size of the string
+ * @param i The index
+ * @return char*
+ */
 char	*ft_strcjoin(char const *s1, char c)
 {
 	int		size;
@@ -24,6 +33,15 @@ char	*ft_strcjoin(char const *s1, char c)
 	return (string);
 }
 
+/**
+ * @brief Convert the bits to ascii
+ * @param sig The signal
+ * @param bits The number of bits
+ * @param i The index
+ * @param str The string
+ * @param temp The temporary string
+ * @return void
+ */
 void	bit_ascii(int sig)
 {
 	static int	bits;
@@ -52,6 +70,13 @@ void	bit_ascii(int sig)
 	}
 }
 
+/**
+ * @brief The core of the server side, where we receive the string from the client
+ * @param argc The number of arguments
+ * @param argv The arguments
+ * @param pid The process id
+ * @return int
+ */
 int	main(int argc, char **argv)
 {
 	int	pid;

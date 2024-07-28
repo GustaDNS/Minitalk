@@ -1,5 +1,13 @@
 #include "minitalk.h"
 
+/**
+ * @brief Send a character to the server
+ * @param pid The process id of the server
+ * @param c The character to send
+ * @param signal The signal to send
+ * @param bits The number of bits to send
+ * @return void
+ */
 void	send_char(int pid, char c)
 {
 	int	bits;
@@ -25,6 +33,14 @@ void	send_char(int pid, char c)
 	}
 }
 
+/**
+ * @brief The core of the client side, where we send the string to the server and handle the errors
+ * @param argc The number of arguments
+ * @param argv The arguments
+ * @param i The index
+ * @param pid The process id
+ * @return int
+ */
 int	main(int argc, char **argv)
 {
 	size_t	i;
