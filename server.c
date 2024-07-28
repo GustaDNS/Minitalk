@@ -31,7 +31,6 @@ void	bit_ascii(int sig)
 	static char	*str;
 	char		*temp;
 
-	
 	if (!str)
 		str = ft_calloc(1, 1);
 	if (sig == SIGUSR1)

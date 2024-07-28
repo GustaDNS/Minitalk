@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 10:24:50 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/07/27 22:57:50 by marvin           ###   ########.fr       */
+/*   Updated: 2024/07/28 14:41:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 void	bit_ascii(int sig);
 char	*ft_strcjoin(char const *s1, char c);
-void    send_string(int pid, char str);
-
+void	send_string(int pid, char str);
 
 #endif

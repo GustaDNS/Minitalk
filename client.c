@@ -2,12 +2,12 @@
 
 void	send_char(int pid, char c)
 {
-	int bits = 0;
+	int	bits;
+	int	signal;
 
+	bits = 0;
 	while (bits < 8)
 	{
-		int signal;
-
 		if (c & (0x01 << bits))
 			signal = SIGUSR1;
 		else
@@ -17,7 +17,7 @@ void	send_char(int pid, char c)
 			if (signal == SIGUSR1)
 				ft_printf("Error to send SIGUSR1\n");
 			else
-        		ft_printf("Error to send SIGUSR2\n");
+				ft_printf("Error to send SIGUSR2\n");
 			exit(1);
 		}
 		usleep(200);
@@ -25,22 +25,21 @@ void	send_char(int pid, char c)
 	}
 }
 
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	size_t i;
+	size_t	i;
+	int		pid;
 
 	if (argc != 3)
 	{
 		ft_printf("Usage: %s <pid> <string>\n", argv[0]);
-		return 1;
+		return (1);
 	}
-
-	int pid = atoi(argv[1]);
+	pid = atoi(argv[1]);
 	if (pid <= 0)
 	{
 		ft_printf("Invalid PID\n");
-		return 1;
+		return (1);
 	}
 	i = 0;
 	while (argv[2][i] != '\0')

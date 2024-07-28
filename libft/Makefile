@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddias-fe <ddias-fe@student.42porto.com>    +#+  +:+       +#+         #
+#    By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/09 14:59:38 by ddias-fe          #+#    #+#              #
-#    Updated: 2024/04/09 14:59:38 by ddias-fe         ###   ########.fr        #
+#    Created: 2024/04/25 17:27:27 by gudaniel          #+#    #+#              #
+#    Updated: 2024/04/27 15:59:18 by gudaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
