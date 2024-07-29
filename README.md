@@ -32,7 +32,10 @@ Now you'll use the PID it's was showed on server and send a string
 ```bash
 $ ./client <server_pid> "TEXT"
 ```
-<img src="htr/client.PNG" alt="client" height=40 widht=20>
+
+<div>
+	<img src="htr/client.PNG" alt="client" height=30 widht=20>
+<div/>
 
 5 - Output
 After this we will get the following result on the server:
