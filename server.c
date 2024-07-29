@@ -1,5 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/29 08:45:33 by gudaniel          #+#    #+#             */
+/*   Updated: 2024/07/29 11:31:43 by gudaniel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
+void	server_art(void)
+{
+	ft_printf(RED "   \t\t\t\t     ▄████  █    ██   ██████             \n");
+	ft_printf(RED "   \t\t\t\t     ██▒ ▀█▒ ██  ▓██▒▒██    ▒             \n");
+	ft_printf(RED "   \t\t\t\t   ▒██░▄▄▄░▓██  ▒██░░ ▓██▄               \n");
+	ft_printf(RED "   \t\t\t\t   ░▓█  ██▓▓▓█  ░██░  ▒   ██▒            \n");
+	ft_printf(RED "   \t\t\t\t   ░▒▓███▀▒▒▒█████▓ ▒██████▒▒            \n");
+	ft_printf(RED "   \t\t\t\t   ░▒   ▒ ░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░            \n");
+	ft_printf(RED "   \t\t\t\t    ░   ░ ░░▒░ ░ ░ ░ ░▒  ░ ░            \n");
+	ft_printf(RED "   \t\t\t\t\t   ░ ░   ░  ░░░ ░ ░ ░  ░  ░              \n");
+	ft_printf(RED "   \t\t\t\t\t         ░    ░           ░              \n");
+	ft_printf("                                                     \n");
+	ft_printf(RED "\t\t\t ██████ ▓█████  ██▀███   ██▒   █▓▓█████  ██▀███  \n");
+	ft_printf(RED "\t\t\t▒██    ▒ ▓█   ▀ ▓██ ▒ ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒\n");
+	ft_printf(RED "\t\t\t░ ▓██▄   ▒███   ▓██ ░▄█ ▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒\n");
+	ft_printf(RED "\t\t\t  ▒   ██▒▒▓█  ▄ ▒██▀▀█▄    ▒██ █░░▒▓█  ▄ ▒██▀▀█▄  \n");
+	ft_printf(RED "\t\t\t▒██████▒▒░▒████▒░██▓ ▒██▒   ▒▀█░  ░▒████▒░██▓ ▒██▒\n");
+	ft_printf(RED "\t\t\t▒ ▒▓▒ ▒ ░░░ ▒░ ░░ ▒▓ ░▒▓░   ░ ▐░  ░░ ▒░ ░░ ▒▓ ░▒▓░\n");
+	ft_printf(RED "\t\t\t░ ░▒  ░ ░ ░ ░  ░  ░▒ ░ ▒░   ░ ░░   ░ ░  ░  ░▒ ░ ▒░\n");
+	ft_printf(RED "\t\t\t░  ░  ░     ░     ░░   ░      ░░     ░     ░░   ░ \n");
+	ft_printf(RED "\t\t\t      ░     ░  ░   ░           ░     ░  ░   ░     \n");
+	ft_printf(RED "\t\t                               ░                   \n");
+	ft_printf("\n");
+}
 /**
  * @brief Join a string with a character
  * @param s1 The string to join
@@ -9,6 +45,7 @@
  * @param i The index
  * @return char*
  */
+
 char	*ft_strcjoin(char const *s1, char c)
 {
 	int		size;
@@ -71,7 +108,8 @@ void	bit_ascii(int sig)
 }
 
 /**
- * @brief The core of the server side, where we receive the string from the client
+ * @brief The core of the server side, where we receive 
+ * the string from the client
  * @param argc The number of arguments
  * @param argv The arguments
  * @param pid The process id
@@ -88,9 +126,10 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	pid = getpid();
-	ft_printf("$ %s\n", "Gudaniel Server is open and running");
-	ft_printf("$ [PID]: %d \n", pid);
-	ft_printf("$ %s \n", "Client input:");
+	server_art();
+	ft_printf(WHT "The server is open\n");
+	ft_printf(WHT "$ [PID]: %d \n", pid);
+	ft_printf(WHT "$ %s \n", "Output:");
 	while (argc == 1)
 	{
 		signal(SIGUSR1, bit_ascii);
