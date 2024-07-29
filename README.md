@@ -25,16 +25,18 @@ $ make
 ```bash
 $ ./server
 ```
+<img src="htr/server.PNG" alt="server" height=300>
 
 4 - Run client
-
 Now you'll use the PID it's was showed on server and send a string
 ```bash
 $ ./client <server_pid> "TEXT"
 ```
+<img src="htr/client.PNG" alt="client" height=40 widht=20>
 
 5 - Output
-
 After this we will get the following result on the server:
+
+<img src="htr/output.PNG" alt="output" height=90>
 <br>
 
