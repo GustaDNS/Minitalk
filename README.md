@@ -25,7 +25,7 @@ $ make
 ```bash
 $ ./server
 ```
-<img src="htr/server.PNG" alt="server" height=300>
+<img src="htr/server.png" alt="server" height=300>
 
 4 - Run client
 Now you'll use the PID it's was showed on server and send a string
@@ -34,12 +34,12 @@ $ ./client <server_pid> "TEXT"
 ```
 
 <div>
-	<img src="htr/client.PNG" alt="client" height=30 widht=20>
+	<img src="htr/client.png" alt="client" height=200 widht=5>
 <div/>
 
 5 - Output
 After this we will get the following result on the server:
 
-<img src="htr/output.PNG" alt="output" height=90>
+<img src="htr/output.png" alt="output" height=90>
 <br>
 
