@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 08:45:33 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/07/29 11:31:43 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/07/30 12:12:07 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	bit_ascii(int sig)
 	if (!str)
 		str = ft_calloc(1, 1);
 	if (sig == SIGUSR1)
-		i |= (0x01 << bits);
+		i |= (1 << bits);
 	bits++;
 	if (bits == 8)
 	{

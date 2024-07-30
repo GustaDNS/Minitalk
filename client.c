@@ -6,7 +6,7 @@
 /*   By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 08:45:40 by gudaniel          #+#    #+#             */
-/*   Updated: 2024/07/29 12:40:29 by gudaniel         ###   ########.fr       */
+/*   Updated: 2024/07/30 14:05:14 by gudaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 size_t	sleep_def(size_t len)
 {
-	int	i;
-
 	if (len <= 10000)
-		i = 50;
-	if (len <= 30000)
-		i = 100;
-	if (len <= 50000)
-		i = 300;
-	if (len <= 40000)
-		i = 450;
-	return (i);
+		return (10);
+	else if (len <= 30000)
+		return (100);
+	else if (len <= 60000)
+		return (300);
+	else if (len <= 100000)
+		return (500);
+	else
+		return (10000);
 }
 
 /**
@@ -43,7 +42,7 @@ void	send_char(int pid, char c, size_t len)
 	bits = 0;
 	while (bits < 8)
 	{
-		if (c & (0x01 << bits))
+		if (c & (1 << bits))
 			signal = SIGUSR1;
 		else
 			signal = SIGUSR2;

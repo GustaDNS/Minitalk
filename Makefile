@@ -1,37 +1,51 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gudaniel <gudaniel@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/07/29 08:45:54 by gudaniel          #+#    #+#              #
+#    Updated: 2024/07/29 08:45:54 by gudaniel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAMEC = client
+NAMES = server
+LIBFT = libft/libft.a
+SRCC = client.c
+SRCS = server.c
+OBJC = $(SRCC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Werror -Wextra -fPIC
+INCLUDE = -I include
 RM = rm -rf
-NAME_SV = server
-NAME_CL = client
-LIBFT = ./libft/libft.a
 
 
-CL_SRC = client.c \
+all: $(NAMES) $(NAMEC)
 
-SV_SRC = server.c \
 
-CL_OBJ = $(CL_SRC:.c=.o)
+$(NAMES): $(OBJS) $(LIBFT)
+	$(CC) -o $@ $(OBJS) -Llibft -lft
 
-SV_OBJ = $(SV_SRC:.c=.o)
+$(NAMEC): $(OBJC) $(LIBFT)
+	$(CC) -o $@ $(OBJC) -Llibft -lft
 
-all: libs $(NAME_CL) $(NAME_SV) $(LIBS)
+%.o: %.c
+	$(CC) -c $(CFLAGS) $< -o $@
 
-libs: 
-	$(MAKE) -C ./libft/
-
-$(NAME_CL): $(CL_OBJ) $(LIBS)
-	$(CC) $(CFLAGS) $(CL_OBJ) $(LIBFT) -o $(NAME_CL)
-	
-$(NAME_SV): $(SV_OBJ) $(LIBS)
-	$(CC) $(CFLAGS) $(SV_OBJ) $(LIBFT) -o $(NAME_SV)
+$(LIBFT):
+	make -C libft
 
 clean:
-	$(MAKE) clean -C ./libft/
-	$(RM) $(CL_OBJ) $(SV_OBJ)
+	$(RM) $(OBJS) $(OBJC)
+	make -C libft clean
 
 fclean: clean
-	$(RM) $(NAME_CL) $(NAME_SV) $(LIBFT)
+	$(RM) $(NAMES) $(NAMEC)
+	make -C libft fclean
 
-re: clean all
+re: fclean all
 
-PHONY: all clean fclean re
+.PHONY: all clean fclean re
